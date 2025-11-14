@@ -116,3 +116,54 @@ Use the same automation across servers, networks, clouds, and containers
 
 Ansible is not only powerful — it is fast to start, fast to execute, and fast to see results.
 You don’t need to wait for complex setups; start automating today and get immediate benefits.
+
+Use case example
+
+🔹 Inventory — List of Managed Nodes
+
+Create a file named inventory.ini:
+
+```
+[webservers]
+server1 ansible_host=192.168.1.11
+server2 ansible_host=192.168.1.12
+server3 ansible_host=192.168.1.13
+server4 ansible_host=192.168.1.14
+server5 ansible_host=192.168.1.15
+server6 ansible_host=192.168.1.16
+```
+
+🔹 Playbook — Install Nginx
+
+Create install_nginx.yml:
+
+```
+- name: Install Nginx on all webservers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Nginx package
+      apt:
+        name: nginx
+        state: present
+```
+
+🔹 Run the Playbook
+
+Execute the playbook from your Control Node:
+
+```
+ansible-playbook -i inventory.ini install_nginx.yml
+```
+
+Result: All 6 servers will have Nginx installed and ready to serve requests, without logging into each server manually.
+
+✅ Key Points
+
+Parallel Execution: Tasks are executed on all servers simultaneously.
+
+Idempotent: Re-running the playbook will not make unnecessary changes.
+
+Single Source of Truth: All servers are configured consistently.
+
+Scalable: Easily add more servers by updating the inventory.
