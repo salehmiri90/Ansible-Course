@@ -134,7 +134,7 @@ Playbooks define **sequential tasks** to automate infrastructure.
 **XML:**
 ```xml
 <user>
-  <name>Ali</name>
+  <name>Saleh</name>
   <age>30</age>
 </user>
 ```
@@ -142,7 +142,7 @@ Playbooks define **sequential tasks** to automate infrastructure.
 **JSON:**
 ```json
 {
-  "name": "Ali",
+  "name": "Saleh",
   "age": 30
 }
 ```
@@ -150,14 +150,14 @@ Playbooks define **sequential tasks** to automate infrastructure.
 **YAML:**
 ```yaml
 user:
-  name: Ali
+  name: Saleh
   age: 30
 ```
 
 **List of Dictionaries:**
 ```yaml
 users:
-  - name: Ali
+  - name: Saleh
     age: 30
   - name: Sara
     age: 25
@@ -167,14 +167,14 @@ users:
 ```yaml
 # Wrong
 users:
- - name: Ali
+ - name: Saleh
    age: 30
  - name: Sara
   age: 25   # incorrect
 
 # Correct
 users:
-  - name: Ali
+  - name: Saleh
     age: 30
   - name: Sara
     age: 25
