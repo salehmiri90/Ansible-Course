@@ -26,7 +26,7 @@ There are two primary connection methods in Ansible:
 * Suitable for production and large environments
 * Run playbooks on hundreds of hosts without entering passwords
 
-Always use SSH keys in production. Use `ansible_ssh_private_key_file` in inventory for private keys. User/password is only for testing.
+> Always use SSH keys in production. Use `ansible_ssh_private_key_file` in inventory for private keys. User/password is only for testing.
 
 ---
 
