@@ -1,5 +1,3 @@
----
-
 # 🔑 Ansible Connection Methods and Privilege Escalation
 
 ## 📌 How Ansible Connects to Hosts
