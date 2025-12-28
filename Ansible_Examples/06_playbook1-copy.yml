@@ -1,0 +1,10 @@
+---
+- name: Copy index.html to remote servers
+  hosts: myservers
+  become: yes
+
+  tasks:
+    - name: Copy static index.html
+      copy:
+        src: 06_playbook1-index.html
+        dest: /var/www/nginx-default/index.html

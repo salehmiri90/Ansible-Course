@@ -1,0 +1,9 @@
+---
+- hosts: myservers
+  become: yes
+
+  tasks:
+    - name: Deploy index.html using template
+      template:
+        src: 06_playbook2-index.html.j2
+        dest: /var/www/nginx-default/index.html
