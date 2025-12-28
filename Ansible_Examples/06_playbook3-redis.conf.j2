@@ -1,0 +1,13 @@
+bind {{ ip_address }}
+
+protected-mode yes
+
+port {{ redis_port | default('6379') }}
+
+tcp-backlog 511
+timeout 0
+
+tcp-keepalive {{ tcp_keepalive | default('300') }}
+
+daemonize no
+supervised no

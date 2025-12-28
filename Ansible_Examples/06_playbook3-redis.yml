@@ -1,0 +1,36 @@
+---
+- name: Install and configure Redis
+  hosts: myservers
+  become: yes
+
+  vars:
+    # ip_address: 192.168.1.100
+    # redis_port: 6379
+    # tcp_keepalive: 300
+
+  tasks:
+    - name: Install Redis
+      yum:
+        name: redis
+        state: present
+
+    - name: Deploy redis.conf from template
+      template:
+        src: 06_playbook3-redis.conf.j2
+        dest: /etc/redis/redis.conf
+        owner: redis
+        group: redis
+        mode: '0644'
+      notify: restart redis
+
+    - name: Ensure Redis is started and enabled
+      service:
+        name: redis
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: restart redis
+      service:
+        name: redis
+        state: restarted
