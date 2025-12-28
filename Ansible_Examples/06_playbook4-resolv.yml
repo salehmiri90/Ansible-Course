@@ -1,0 +1,13 @@
+---
+- name: Configure resolv.conf using template
+  hosts: myservers
+  become: yes
+
+  tasks:
+    - name: Deploy resolv.conf
+      template:
+        src: 06_playbook4-resolv.conf.j2
+        dest: /etc/resolv.conf
+        owner: root
+        group: root
+        mode: '0644'
