@@ -1,0 +1,46 @@
+---
+- name: Install EPEL repository (RedHat only)
+  yum:
+    name: epel-release
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install pre-requisite packages (RedHat)
+  yum:
+    name: "{{ pre_requisites }}"
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install pre-requisite packages (Debian)
+  apt:
+    name: "{{ pre_requisites }}"
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install Nginx packages (RedHat)
+  yum:
+    name: "{{ nginx_packages }}"
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install Nginx packages (Debian)
+  apt:
+    name: "{{ nginx_packages }}"
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Start and enable Nginx service
+  service:
+    name: "{{ nginx_service_name }}"
+    state: started
+    enabled: yes
+
+- name: Configure custom web page
+  template:
+    src: index.html.j2
+    dest: "{{ custom_index_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart nginx

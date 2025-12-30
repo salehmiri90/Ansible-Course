@@ -1,0 +1,10 @@
+---
+pre_requisites:
+  - curl
+
+nginx_packages:
+  - nginx
+
+nginx_service_name: nginx
+custom_index_path: /usr/share/nginx/html/index.html
+web_message: "Welcome to Nginx installed by Ansible!"
