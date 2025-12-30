@@ -1,5 +1,6 @@
 [myservers]
 rocky1
+#rocky2
 
 [db]
 ubuntu1
