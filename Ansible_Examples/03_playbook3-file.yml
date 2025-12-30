@@ -6,11 +6,11 @@
       file:
         path: /opt/training
         state: directory
-    
+
     - name: Create file
       file:
         path: /opt/training/index.html
         state: touch
-        owner: training
-        group: training
+        owner: root
+        group: root
         mode: '0644'

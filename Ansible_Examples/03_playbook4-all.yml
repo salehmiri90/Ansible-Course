@@ -7,17 +7,17 @@
         name: nginx
         state: latest
 
-    - name: Start httpd service
+    - name: Start nginx service
       service:
-        name: httpd
+        name: nginx
         state: started
         enabled: yes
 
     - name: config firewall
       firewalld:
         service: http
-        port: 8080/tcp
-        source: 192.0.0.0/24
+          #port: 8080/tcp
+          #source: 192.0.0.0/24
         zone: public
         state: enabled
         permanent: yes
@@ -27,11 +27,11 @@
       file:
         path: /opt/training
         state: directory
-    
+
     - name: Create file
       file:
         path: /opt/training/index.html
         state: touch
-        owner: training
-        group: training
+        owner: root
+        group: root
         mode: '0644'

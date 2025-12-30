@@ -6,11 +6,11 @@
       yum:
         name: nginx
         state: latest
-      when: ansible_os_family == "Rocky"
+      when: ansible_os_family == "RedHat"
 
-    - name: install nginx on Debian
+    - name: install nginx on Ubuntu
       apt:
         name: nginx
         state: latest
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_os_family == "Debian"
     

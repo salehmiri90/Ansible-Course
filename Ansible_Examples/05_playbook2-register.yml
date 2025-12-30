@@ -20,5 +20,3 @@
     - name: Show the result of the stat mode
       debug:
         msg: "Directory mode is {{ opt_dir_status.stat.mode }}"
-
-

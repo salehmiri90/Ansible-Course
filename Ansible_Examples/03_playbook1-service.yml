@@ -2,8 +2,8 @@
 - hosts: myservers
   become: yes
   tasks:
-    - name: Start httpd service
+    - name: Start nginx service
       service:
-        name: httpd
+        name: nginx
         state: started
         enabled: yes

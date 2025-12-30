@@ -4,15 +4,15 @@
   become: yes
   tasks:
 
-    - name: Ensure httpd package is present
+    - name: Ensure nginx package is present
       yum:
-        name: httpd
+        name: nginx
         state: latest
-      notify: restart_httpd
+      notify: restart_nginx
 
   handlers:
 
-    - name: restart_httpd
+    - name: restart_nginx
       service:
-        name: httpd
+        name: nginx
         state: restarted
