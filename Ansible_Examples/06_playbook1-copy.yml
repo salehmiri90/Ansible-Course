@@ -7,4 +7,4 @@
     - name: Copy nginx file
       copy:
         src: 06_playbook1-index.html
-        dest: /var/www/nginx-default/index.html
+        dest: /var/www/html/index.html

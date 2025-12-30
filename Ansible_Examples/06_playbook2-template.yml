@@ -6,4 +6,4 @@
     - name: Deploy index.html using template
       template:
         src: 06_playbook2-index.html.j2
-        dest: /var/www/nginx-default/index.html
+        dest: /var/www/html/index.html
