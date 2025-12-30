@@ -1,0 +1,10 @@
+---
+- name: Install mysql using galaxy
+  hosts: all
+  become: true
+
+  vars:
+    mysql_root_password: "StrongPassword123"
+    
+  roles:
+    - geerlingguy.mysql

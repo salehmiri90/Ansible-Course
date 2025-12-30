@@ -1,5 +1,5 @@
 ---
-- name: Install and configure Nginx (Multi-OS, no role)
+- name: Install and configure Nginx (Multi-OS)
   hosts: all
   become: true
 
@@ -16,7 +16,7 @@
 
   tasks:
 
-    - name: Install EPEL repository (RedHat only)
+    - name: Install EPEL repository (RedHat)
       yum:
         name: epel-release
         state: present

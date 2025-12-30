@@ -1,0 +1,11 @@
+---
+- name: Install nginx using custom role and mysql using galaxy
+  hosts: all
+  become: true
+
+  vars:
+    mysql_root_password: "StrongPassword123"
+    
+  roles:
+    - nginx
+    - geerlingguy.mysql
